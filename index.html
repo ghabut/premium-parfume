@@ -1,164 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parfum Premium</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <title>Absolute scent</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
+    /* General Styles */
     body {
-      background-color: #f5f5dc; /* Cream */
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
       color: #333;
     }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
+    /* Header */
     header {
+      background-image: url('https://i.imgur.com/q8paS54.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
       text-align: center;
-      padding: 20px 0;
+      color: rgb(255, 248, 186);
     }
-
     header h1 {
-      font-size: 2.5em;
-      font-weight: 600;
-      color: #444;
+      font-size: 3.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgb(255, 208, 0); /* Shadow effect */
+      background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient effect */
+      -webkit-background-clip: text;
+
+    }
+    header p {
+      font-size: 1.25rem;
+      margin: 20px 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+      background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient effect */
+      -webkit-background-clip: text;
+    }
+    .cta-btn {
+      padding: 15px 30px;
+      background-color: #ffcf33;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn:hover {
+      background-color: #c13b1d;
     }
 
-    .products {
+    /* Menu Section */
+    #menu {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      padding: 60px 20px;
+      background-color: #fff;
     }
-
-    .product {
-      background: #fff;
-      border-radius: 10px;
+    .menu-item {
+      width: 300px;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
       text-align: center;
-      width: calc(50% - 20px); /* Zig-zag style */
-      max-width: 400px;
+      transition: transform 0.3s ease;
     }
-
-    .product img {
+    .menu-item:hover {
+      transform: translateY(-10px);
+    }
+    .menu-item img {
       width: 100%;
-      height: auto;
+      height: 200px;
       object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .menu-item h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-top: 15px;
+    }
+    .menu-item p {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 20px;
+      padding: 0 15px;
     }
 
-    .product h3 {
-      font-size: 1.5em;
-      color: #444;
-      margin: 15px 0;
-    }
-
-    .product p {
-      color: #666;
-      font-size: 1em;
-      padding: 0 15px 15px;
-    }
-
-    .product a {
+    .menu-item a {
       display: inline-block;
       margin-bottom: 15px;
       padding: 10px 20px;
-      background-color: #444;
+      background-color: #ffda96;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s;
     }
 
-    .product a:hover {
+    .menu-item a:hover {
       background-color: #333;
     }
-
-    .coming-soon {
-      margin: 40px 0;
+    /* Call to Action */
+    .cta {
       text-align: center;
+      padding: 60px 20px;
     }
-
-    .coming-soon h3 {
-      font-size: 2em;
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .cta p {
+      font-size: 1.15rem;
+      margin-bottom: 40px;
+      line-height: 1.5;
       color: #555;
     }
-
-    .coming-soon p {
-      color: #777;
-      font-size: 1.2em;
+    .cta-btn-large {
+      padding: 15px 30px;
+      background-color: #FF5733;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn-large:hover {
+      background-color: #c13b1d;
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Header Section -->
   <header>
-    <h1>Parfum Premium Collection</h1>
+    <h1>Absolute scent</h1>
+    <p>Pesona Tiada Henti, Harum yang Menginspirasi</p>
+    <a href="#menu" class="cta-btn">Lihat parfume</a>
   </header>
 
-  <main class="container">
-    <section class="products">
-      <!-- Product 1 -->
-      <div class="product">
-        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rdy5-m0ibwkszje15e6.webp" alt="Parfum Elegant">
-        <h3>Fragrance World Proud Of You Amber Unisex</h3>
-        <p>Parfum PREMIUM yang bikin kamu Pede sepanjang hari.</p>
-        <a href="https://id.shp.ee/aZmoSMZ">Beli di Shopee</a>
-      </div>
+  <!-- Call to Action Section -->
+  <section class="cta">
+    <h2>Temukan Aroma Elegan untuk Setiap Momen</h2>
+    <p>Kunjungi akun Instagram kami untuk mendapatkan inspirasi dan memilih parfum yang sesuai dengan kepribadian Anda!</p>
+    <a href="https://www.instagram.com" target="_blank" class="cta-btn-large">Kunjungi Instagram</a>
+  </section>
 
-      <!-- Product 2 -->
-      <div class="product">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lnv8e3731c2eb5.webp" alt="Parfum Fresh">
-        <h3>Mykonos Dark Secret Extrait De Parfume</h3>
-        <p> Aroma yang membisikkan kisah yang hanya diketahui oleh malam.</p>
-        <a href="https://id.shp.ee/37Ttd3C">Beli di Shopee</a>
-      </div>
+  <!-- Menu Section -->
+  <section id="menu">
+    <div class="menu-item">
+      <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rdy5-m0ibwkszje15e6.webp" alt="Parfum Elegant">
+      <h3>Fragrance World Proud Of You Amber Unisex</h3>
+      <p>Parfum PREMIUM yang bikin kamu Pede sepanjang hari.</p>
+      <a href="https://id.shp.ee/aZmoSMZ">Beli di Shopee</a>
+    </div>
+    <div class="menu-item">
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lnv8e3731c2eb5.webp" alt="Parfum Fresh">
+      <h3>Mykonos Dark Secret Extrait De Parfume</h3>
+      <p> Aroma yang membisikkan kisah yang hanya diketahui oleh malam.</p>
+      <a href="https://id.shp.ee/37Ttd3C">Beli di Shopee</a>
+    </div>
+    <div class="menu-item">
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rask-m1peqz2er0hn78.webp" alt="Parfum Romance">
+      <h3>Decant Parfum S With You Intensely</h3>
+      <p>Aroma romantis dengan sentuhan vanilla.</p>
+      <a href="https://id.shp.ee/MY8pvaU">Beli di Shopee</a>
+    </div>
+    <div class="menu-item">
+      <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasg-m1w70s70oysec2.webp" alt="Parfum Bold">
+      <h3>Zimaya by Afnan Mazaaj Infused for Men Eau De Parfume</h3>
+      <p>Memiliki daya tahan sampai dengan  jam di kulit.</p>
+      <a href="https://id.shp.ee/TxL2s6e">Beli di Shopee</a>
+    </div>
+  </section>
 
-      <!-- Product 3 -->
-      <div class="product">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rask-m1peqz2er0hn78.webp" alt="Parfum Romance">
-        <h3>Decant Parfum S With You Intensely</h3>
-        <p>Aroma romantis dengan sentuhan vanilla.</p>
-        <a href="https://id.shp.ee/MY8pvaU">Beli di Shopee</a>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasg-m1w70s70oysec2.webp" alt="Parfum Bold">
-        <h3>Zimaya by Afnan Mazaaj Infused for Men Eau De Parfume</h3>
-        <p>Memiliki daya tahan sampai dengan  jam di kulit.</p>
-        <a href="https://id.shp.ee/TxL2s6e">Beli di Shopee</a>
-      </div>
-
-      
-      <!-- Product 5 -->
-      <div class="product">
-        <img src="https://cdn.creazilla.com/emojis/46353/question-mark-emoji-clipart-md.png" alt="?">
-        <h3>Parfume Premium</h3>
-        <p>Produk terbaru dari koleksi parfum premium akan hadir segera..</p>
-        <a href="#">COMING SOON</a>
-      </div>
-    </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Premium Parfume | Dibuat dengan ❤️ oleh Tim Kami</p>
-    <p><a href="#">Syarat & Ketentuan</a> | <a href="#">Kebijakan Privasi</a></p>
-</footer>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Premium Parfume | Dibuat dengan ❤️ oleh Tim Kami</p>
+      <p><a href="#">Syarat & Ketentuan</a> | <a href="#">Kebijakan Privasi</a></p>
+  </footer>
 
 </body>
 </html>
